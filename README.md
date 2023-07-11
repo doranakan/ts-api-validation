@@ -1,6 +1,6 @@
 # Typescript API Validation ✅
 
-This is a dummy project to make a quick demonstration of the main validation libraries you can use in your TS project.  
+This is a dummy project to make a quick demonstration of the main validation libraries you can use in your TS project.
 
 ## What's inside? 📦
 
@@ -19,7 +19,7 @@ npm i
 ```
 
 ```bash
-npm run dev
+npm run start
 ```
 
 ## Test the libraries! 👾

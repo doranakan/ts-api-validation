@@ -21,11 +21,12 @@ export const App = () => (
         <VStack spacing={2}>
           <Logo h="10vmin" pointerEvents="none" />
           <Text fontWeight="black" fontSize="5xl">
-            Pokèdex
+            Pokèdez
           </Text>
           <Text color="red.200" fontSize="2xl">
-            This is not actually a real Pokèdex since it only let you get
-            Ditto's info, but with 3 different validations! Isn't it beautiful?
+            DISCLAIMER 😅: This is not a real Pokèdex, it only let you get
+            Ditto's info, but applying 3 different api validations! Isn't it
+            beautiful?
           </Text>
           <HStack mt={8} spacing={4} alignItems={'flex-start'}>
             <YupContainer />

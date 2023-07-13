@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import { yupPokemonSchema } from '../../validation';
 import DittoBox from '../DittoBox/DittoBox';
+import { ValidationError } from 'yup';
 
 const YupContainer = (): JSX.Element => {
   const handleResponse = useCallback(async (response: unknown) => {
@@ -8,8 +9,8 @@ const YupContainer = (): JSX.Element => {
       const validatedResponse = await yupPokemonSchema.validate(response);
 
       return validatedResponse;
-    } catch (error: any) {
-      return { error: error.message };
+    } catch (error) {
+      return { error: (error as ValidationError).message };
     }
   }, []);
 

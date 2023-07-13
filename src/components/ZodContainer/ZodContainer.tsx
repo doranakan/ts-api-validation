@@ -4,13 +4,13 @@ import DittoBox from '../DittoBox/DittoBox';
 
 const ZodContainer = (): JSX.Element => {
   const handleResponse = useCallback(async (response: unknown) => {
-    try {
-      const validatedResponse = await zodPokemonSchema.parseAsync(response);
+    const validatedResponse = await zodPokemonSchema.safeParseAsync(response);
 
-      return validatedResponse;
-    } catch (error: any) {
-      return { error: error.message };
+    if (!validatedResponse.success) {
+      return { error: validatedResponse.error.toString() };
     }
+
+    return validatedResponse.data;
   }, []);
 
   return <DittoBox onResponse={handleResponse} title="Zod 🚀" />;
